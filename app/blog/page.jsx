@@ -7,7 +7,7 @@ const testArray = [1, 2, 3, 4, 5, 6, 7, 8];
 const BlogComp = () => {
   return (
     <div
-      className={`py-3 w-80vw grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-3 gap-x-3 justify-items-center  border  border-black ${styles.container}`}
+      className={`py-3 w-80vw grid grid-cols-12 gap-3 gap-x-3 justify-items-center  border  border-black ${styles.container}`}
     >
       {testArray.map((_, index) => {
         return <BlogCompChild key={index} element={index} />;
