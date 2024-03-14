@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 function BlogCompChild({ element }) {
   return (
-    <div className=" h-450px p-1 col-span-12 lg:col-span-6 xl:col-span-4 2xl:col-span-3 w-100%   bg-green-500 relative border-4 border-black ">
+    <div className=" h-450px p-1  w-90% lg:w-49% xl:w-30% 2xl:w-24%   bg-green-500 relative border-4 border-black ">
       <Image
         src="https://images.pexels.com/photos/20498979/pexels-photo-20498979/free-photo-of-mongolian-girl.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         width={300}
