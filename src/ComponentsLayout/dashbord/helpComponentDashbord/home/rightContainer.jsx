@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 const RightContainerHome = () => {
   return (
-    <div className=" flex flex-col  justify-start pt-16  space-y-6 bg-red-400 border border-black  w-100% lg:w-50% ">
+    <div className=" flex flex-col  justify-start pt-16 gap-6 bg-red-400 border border-black flex-1 ">
       <h1 className="text-6xl ">
         {" "}
         We Create digital ideas that are bigger , bolder , braver and better .{" "}
@@ -15,11 +16,17 @@ const RightContainerHome = () => {
       </h1>
 
       <div className="flex justify-start space-x-3 bg-yellow-400  p-2  ">
-        <button className="theButtonClass w-20%"> Learn more </button>
-        <button className=" hover:bg-blue-700 w-20% font-bold py-2 px-4 rounded bg-white text-black ">
+        <Link href="/about" className="theButtonClass w-20%">
+          {" "}
+          Learn more{" "}
+        </Link>
+        <Link
+          href="/contact"
+          className=" flex justify-center items-center hover:bg-blue-700 w-20% font-bold py-2 px-4 rounded bg-white text-black "
+        >
           {" "}
           Contact{" "}
-        </button>
+        </Link>
       </div>
 
       <div>

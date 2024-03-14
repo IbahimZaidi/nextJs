@@ -1,21 +1,17 @@
 import Link from "next/link";
 import React from "react";
-
+import BlogCompChild from "@/src/ComponentsLayout/dashbord/helpComponentDashbord/blog/BlogCompChild";
 import styles from "./blog.module.css";
+const testArray = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const BlogComp = () => {
   return (
     <div
-      className={`h-100vh w-80vw flex justify-center items-center border  border-black ${styles.container}`}
+      className={`py-3 w-80vw grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-3 gap-x-3 justify-items-center  border  border-black ${styles.container}`}
     >
-      <h4> Hello from the Blog page </h4>
-      <Link
-        href="blog/10"
-        className=" bg-blue-400 flex justify-center items-center w-20 h-8  "
-      >
-        {" "}
-        to Id{" "}
-      </Link>
+      {testArray.map((_, index) => {
+        return <BlogCompChild key={index} element={index} />;
+      })}
     </div>
   );
 };
