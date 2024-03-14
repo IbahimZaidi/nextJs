@@ -1,0 +1,7 @@
+.spanContainer {
+  @apply flex justify-between bg-pink-500 p-2 w-30%;
+}
+
+.span {
+  @apply flex justify-center items-center bg-green-300 h-8;
+}

@@ -16,5 +16,5 @@
 }
 
 .openLi {
-  @apply w-25vw bg-slate-400 h-10;
+  @apply bg-slate-400 h-10;
 }
