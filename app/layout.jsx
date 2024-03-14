@@ -6,7 +6,7 @@ import Footer from "@/src/ComponentsLayout/dashbord/layoutDashbord/Footer";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="container">
         <Header />
         {children}
         <Footer />

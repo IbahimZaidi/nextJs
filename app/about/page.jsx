@@ -1,8 +1,8 @@
 import React from "react";
-
+import "./about.css";
 const AboutComp = () => {
   return (
-    <div className=" bg-red-400 h-100vh flex justify-center items-center ">
+    <div className="container  h-100vh flex justify-center items-center m-auto  ">
       About page
     </div>
   );

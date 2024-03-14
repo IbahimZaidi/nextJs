@@ -27,13 +27,20 @@ body {
 }
 
 .theLiStyle {
-  @apply flex text-black justify-center items-center rounded-sm w-12.5%   transition duration-1000;
+  @apply flex text-black justify-center items-center rounded-sm w-12.5%    transition duration-1000;
 }
 
 .theLiStyle:hover {
   @apply rounded-md bg-black text-white;
 }
+.theButtonClass {
+  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+}
 
+.container {
+  background-color: red;
+  color: white;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;

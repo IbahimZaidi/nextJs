@@ -1,0 +1,20 @@
+.container {
+  background-color: rgb(165, 165, 165);
+  color: rgb(0, 0, 0);
+  margin: auto;
+}
+
+.active {
+  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+}
+
+.isOpen {
+  /* Increase specificity */
+  @apply flex flex-col space-y-3 absolute top-12 w-30vw   border  visible !important;
+  /* right: calc(-10vw - 30vw); */
+  left: calc(100% - 30vw);
+}
+
+.openLi {
+  @apply w-25vw bg-slate-400 h-10;
+}

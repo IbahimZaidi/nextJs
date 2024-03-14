@@ -1,11 +1,11 @@
 import React from "react";
 
-const BlogComp = () => {
+const AdminComp = () => {
   return (
     <div className=" bg-blue-400 h-100vh flex justify-center items-center ">
-      Blog page
+      Admin page
     </div>
   );
 };
 
-export default BlogComp;
+export default AdminComp;
