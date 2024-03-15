@@ -1,4 +1,3 @@
-import React from "react";
 import Styles from "@/app/contact/contact.module.css";
 const LeftCompContact = () => {
   return (

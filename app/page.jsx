@@ -1,6 +1,7 @@
 import RightContainerHome from "@/src/ComponentsLayout/dashbord/helpComponentDashbord/home/rightContainer";
 import Image from "next/image";
 export default function Home() {
+  console.log("Hello world ");
   return (
     <main className="min-h-90vh  w-80vw m-auto p-2 bg-green-400 flex flex-col lg:flex-row gap-x-2 gap-6">
       <RightContainerHome />

@@ -1,3 +1,5 @@
+// "use client";
+
 import Link from "next/link";
 import React from "react";
 import BlogCompChild from "@/src/ComponentsLayout/dashbord/helpComponentDashbord/blog/BlogCompChild";

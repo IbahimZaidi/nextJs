@@ -3,7 +3,7 @@ import React from "react";
 import Styles from "@/app/about/about.module.css";
 const RightContainer = () => {
   return (
-    <div className=" flex flex-col  justify-start pt-16  space-y-6 bg-red-400 border border-black  w-100% lg:w-50%  ">
+    <div className=" flex flex-col  justify-start pt-16  space-y-6  bg-red-400 border border-black  w-100% lg:w-50%  ">
       <h1 className="text-xl text-blue-600  ">About Agency </h1>
 
       <h1 className="text-5xl ">
