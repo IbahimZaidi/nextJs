@@ -1,5 +1,5 @@
 .spanContainer {
-  @apply flex justify-between bg-pink-500 p-2 w-30%;
+  @apply flex justify-between bg-pink-500 m-auto p-2 w-70% sm:w-49%  md:w-30% lg:w-49% 2xl:w-30%;
 }
 
 .span {
