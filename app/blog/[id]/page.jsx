@@ -8,7 +8,7 @@ const IdBlogComp = () => {
   // const { id } = useParams();
 
   return (
-    <div className="min-h-90vh bg-white w-80vw m-auto p-2 text-black flex flex-col lg:flex-row    justify-around  gap-5   gap-x-4 border-2 border-black  ">
+    <div className=" bg-white w-80vw m-auto p-2 text-black flex flex-col lg:flex-row    justify-around  gap-5   gap-x-4 border-2 border-black  ">
       <div className=" bg-red-400 border border-black  w-100%  lg:w-40% xl:30%  flex  items-center justify-center">
         <Image
           // src="/images/about.png"
