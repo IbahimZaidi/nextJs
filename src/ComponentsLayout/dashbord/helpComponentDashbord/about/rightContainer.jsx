@@ -19,7 +19,7 @@ const RightContainer = () => {
         quod?
       </h2>
 
-      <div className="flex justify-between  flex-wrap bg-yellow-400  p-2 gap-x-2 gap-y-4 ">
+      <div className="flex justify-between  flex-wrap  bg-yellow-400  p-2 gap-x-2 gap-y-4 ">
         <div className={`flex flex-col  space-y-2 p-3 ${Styles.spanContainer}`}>
           <span className={Styles.span}> 10 K+ </span>
           <span className={Styles.span}>year of exerprience </span>

@@ -18,7 +18,6 @@ const IdBlogComp = () => {
           height="450"
         />
       </div>
-      {/* <div className=" flex flex-col  flex-1 justify-start pt-16 px-3  space-y-6 bg-red-400 border border-black "> */}
 
       <div
         className="  bg-yellow-300  pt-5 border-4 border-red-300 text-black w-100%  flex flex-col   lg:flex-1  gap-5   "
