@@ -7,22 +7,19 @@ const IdBlogComp = () => {
   const { id } = useParams();
 
   return (
-    <div className=" bg-white w-90% text-black flex justify-around items-center min-h-90vh gap-x-4 border-2 border-black m-2 ">
-      <div className="w-30% bg-green-400 flex justify-center">
+    <div className="min-h-90vh bg-white w-80vw m-auto p-2 text-black flex justify-around   gap-x-4 border-2 border-black  ">
+      <div className=" bg-red-400 border border-black  flex-1 hidden  lg:flex  items-center justify-center">
         <Image
+          // src="/images/about.png"
           src="https://images.pexels.com/photos/20498979/pexels-photo-20498979/free-photo-of-mongolian-girl.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          width="445"
-          height="650"
-          // className="h-100%  "
-          style={{ height: "650px" }}
           alt="Error 404"
+          className=" border border-black h-100%"
+          width="445"
+          height="450"
         />
       </div>
 
-      <div
-        className="  bg-yellow-300 flex-1 text-black flex flex-col gap-5 pt-5 border-4 border-red-300 "
-        style={{ height: "650px" }}
-      >
+      <div className="  bg-yellow-300 w-70% text-black flex flex-col gap-5 pt-5 border-4 border-red-300  ">
         <h1> Title </h1>
         <div className="flex  gap-x-3 bg-pink-500 p-2">
           <Image
