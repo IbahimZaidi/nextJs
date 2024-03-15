@@ -37,7 +37,7 @@ const Links = () => {
   return (
     <div className=" flex justify-around items-center bg-yellow-500 w-70% p-1 relative">
       <div
-        className={`lg:flex justify-around items-center bg-yellow-500 w-90%  hidden ${
+        className={`lg:flex justify-around items-center bg-yellow-500 w-90% z-50 hidden ${
           valueToggle ? styles.isOpen : ""
         } `}
       >

@@ -7,7 +7,7 @@ import RightContainer from "@/src/ComponentsLayout/dashbord/helpComponentDashbor
 
 const AboutComp = () => {
   return (
-    <div className=" h-100%  w-80vw m-auto p-2 bg-green-400 flex flex-col lg:flex-row space-x-2 space-y-2 lg:space-y-0 ">
+    <div className=" min-h-90vh   w-80vw m-auto p-2 bg-green-400 flex flex-col lg:flex-row space-x-2 space-y-2 lg:space-y-0 ">
       <RightContainer />
 
       <div className=" bg-red-400 border border-black w-50% hidden  lg:flex items-center justify-center">
