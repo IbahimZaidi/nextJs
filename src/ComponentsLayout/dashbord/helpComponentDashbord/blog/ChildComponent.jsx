@@ -1,10 +1,11 @@
 // ChildComponent.js
 import React, { useEffect, useState } from "react";
 
-import { fetchSU } from "@/app/blog/page";
+import { fetchFD, fetchSU } from "@/app/blog/page";
 const ChildComponent = async ({ userId }) => {
   const user = await fetchSU(userId); // waiting data
 
+  const userDat = await fetchFD();
   return (
     <div className="flex flex-col space-y-3">
       <span> Author </span>

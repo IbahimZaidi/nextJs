@@ -6,11 +6,6 @@ import { fetchSD } from "../page";
 
 import { useState, useEffect } from "react";
 
-const SlowCom = lazy(() =>
-  import(
-    "@/src/ComponentsLayout/dashbord/helpComponentDashbord/blog/ChildComponent"
-  )
-);
 import ChildComponent from "@/src/ComponentsLayout/dashbord/helpComponentDashbord/blog/ChildComponent";
 const IdBlogComp = ({ params }) => {
   const [data, setData] = useState({});
@@ -45,14 +40,13 @@ const IdBlogComp = ({ params }) => {
             className=" rounded-full"
             alt="Error 404"
           />
-
           {data.userId && (
             <Suspense
               fallback={
                 <h3 className="bg-black text-white"> Loading ........ </h3>
               }
             >
-              <SlowCom userId={data.userId} />
+              <ChildComponent userId={data.userId} />
             </Suspense>
           )}
 
