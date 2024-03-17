@@ -1,11 +1,23 @@
-// "use client";
+"use client";
 
-import { useParams } from "next/navigation";
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import Image from "next/image";
+import { fetchSD } from "../page";
 
-const IdBlogComp = () => {
-  // const { id } = useParams();
+import { useState, useEffect } from "react";
+
+const SlowCom = lazy(() =>
+  import(
+    "@/src/ComponentsLayout/dashbord/helpComponentDashbord/blog/ChildComponent"
+  )
+);
+import ChildComponent from "@/src/ComponentsLayout/dashbord/helpComponentDashbord/blog/ChildComponent";
+const IdBlogComp = ({ params }) => {
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    fetchSD(params.id).then((resolve) => setData(resolve));
+  }, []);
 
   return (
     <div className=" bg-white w-80vw m-auto p-2 text-black flex flex-col lg:flex-row    justify-around  gap-5   gap-x-4 border-2 border-black  ">
@@ -24,7 +36,7 @@ const IdBlogComp = () => {
         className="  bg-yellow-300  pt-5 border-4 border-red-300 text-black w-100%  flex flex-col  lg:flex-1 gap-5   "
         // style={{ height: "650px" }}
       >
-        <h1> Title </h1>
+        <h1> {data && data.title} </h1>
         <div className="flex  gap-x-3 bg-pink-500 p-2">
           <Image
             src="https://images.pexels.com/photos/20498979/pexels-photo-20498979/free-photo-of-mongolian-girl.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -33,17 +45,23 @@ const IdBlogComp = () => {
             className=" rounded-full"
             alt="Error 404"
           />
-          <div className="flex flex-col ">
-            <span> Auth </span>
-            <span> Brahim Zaidi </span>
-          </div>
+
+          {data.userId && (
+            <Suspense
+              fallback={
+                <h3 className="bg-black text-white"> Loading ........ </h3>
+              }
+            >
+              <SlowCom userId={data.userId} />
+            </Suspense>
+          )}
 
           <div className="flex flex-col  ">
             <span> Published </span>
             <span> 03-03-2000 10:35:23 PM </span>
           </div>
         </div>
-        <h2> Desc </h2>
+        <h2> {data && data.body} </h2>
       </div>
     </div>
   );
