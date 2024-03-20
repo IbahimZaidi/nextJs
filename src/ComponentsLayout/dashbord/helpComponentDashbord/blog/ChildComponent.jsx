@@ -1,7 +1,7 @@
 // ChildComponent.js
 import React, { useEffect, useState } from "react";
 
-import { fetchFD, fetchSU } from "@/app/blog/page";
+import { fetchFD, fetchSU } from "@/src/app/blog/page";
 const ChildComponent = async ({ userId }) => {
   const user = await fetchSU(userId); // waiting data
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Styles from "@/app/about/about.module.css";
+import Styles from "@/src/app/about/about.module.css";
 const RightContainer = () => {
   return (
     <div className=" flex flex-col  justify-start pt-16  space-y-6  bg-red-400 border border-black  w-100% lg:w-50%  ">

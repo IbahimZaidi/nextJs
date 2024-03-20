@@ -5,6 +5,7 @@ import BlogCompChild from "@/src/ComponentsLayout/dashbord/helpComponentDashbord
 import styles from "./blog.module.css";
 import { useEffect } from "react";
 import error from "../error";
+import getAllData from "@/src/helper/functions/getAllData";
 const testArray = [1, 2, 3, 4, 5, 6, 7, 8];
 
 export const fetchFD = async () => {
@@ -82,16 +83,29 @@ const BlogComp = () => {
   useEffect(() => {
     fetchFD().then((resolve) => setData(resolve));
   }, []);
+
+  // create states :
+
+  const [posts, setPosts] = useState([]);
+
+  // use getAllData() function to get the data :
+
+  useEffect(() => {
+    getAllData().then((resolve) => {
+      setPosts(resolve.posts);
+    });
+  }, []);
+
   console.log("#######################");
-  console.log(data);
+  console.log(posts);
   console.log("#######################");
 
   return (
     <div
       className={`py-3 w-80vw flex flex-wrap justify-center gap-3 gap-x-3  border  border-black ${styles.container}`}
     >
-      {data.length > 0 &&
-        data.map((elem) => {
+      {posts.length > 0 &&
+        posts.map((elem) => {
           return <BlogCompChild {...elem} key={elem.id} />;
         })}
     </div>

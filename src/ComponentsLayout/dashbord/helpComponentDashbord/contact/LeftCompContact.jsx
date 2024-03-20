@@ -1,5 +1,5 @@
 "use client";
-import Styles from "@/app/contact/contact.module.css";
+import Styles from "@/src/app/contact/contact.module.css";
 const LeftCompContact = () => {
   // console.log("Hello from the Left Component Contact ");
   return (
