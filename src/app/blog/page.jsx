@@ -78,11 +78,11 @@ export const fetchSU = async (userId) => {
 };
 
 const BlogComp = () => {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetchFD().then((resolve) => setData(resolve));
-  }, []);
+  // useEffect(() => {
+  //   fetchFD().then((resolve) => setData(resolve));
+  // }, []);
 
   // create states :
 

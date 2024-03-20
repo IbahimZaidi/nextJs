@@ -1,4 +1,4 @@
-const getAllData = async () => {
+const getAllData = async (id) => {
   const allData = {
     methode: "GET",
     headers: {
@@ -6,15 +6,19 @@ const getAllData = async () => {
     },
   };
 
-  const res = await fetch("http://localhost:3000/api/handler", allData);
+  if (!id) {
+    const res = await fetch("http://localhost:3000/api/handler", allData);
+    const response = await res.json();
+    return response;
+  }
 
+  const res = await fetch("http://localhost:3000/api/handler", allData);
   const response = await res.json();
+  return response;
 
   // console.log("##########################");
   // console.log(response);
   // console.log("##########################");
-
-  return response;
 };
 
 export default getAllData;
