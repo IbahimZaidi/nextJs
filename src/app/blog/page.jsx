@@ -6,6 +6,7 @@ import styles from "./blog.module.css";
 import { useEffect } from "react";
 import error from "../error";
 import getAllData from "@/src/helper/functions/getAllData";
+import getDAtaId from "@/src/helper/functions/getDataId";
 const testArray = [1, 2, 3, 4, 5, 6, 7, 8];
 
 export const fetchFD = async () => {
@@ -77,7 +78,7 @@ export const fetchSU = async (userId) => {
   }
 };
 
-const BlogComp = () => {
+const BlogComp = ({ searchParams }) => {
   // const [data, setData] = useState([]);
 
   // useEffect(() => {
@@ -91,7 +92,7 @@ const BlogComp = () => {
   // use getAllData() function to get the data :
 
   useEffect(() => {
-    getAllData().then((resolve) => {
+    getAllData(searchParams.first).then((resolve) => {
       setPosts(resolve.posts);
     });
   }, []);

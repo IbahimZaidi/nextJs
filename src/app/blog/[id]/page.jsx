@@ -5,14 +5,31 @@ import Image from "next/image";
 import { fetchSD } from "../page";
 
 import { useState, useEffect } from "react";
-
+import getDAtaId from "@/src/helper/functions/getDataId";
 import ChildComponent from "@/src/ComponentsLayout/dashbord/helpComponentDashbord/blog/ChildComponent";
 const IdBlogComp = ({ params }) => {
+  // const [data, setData] = useState({});
   const [data, setData] = useState({});
+  const [elemUser, setElemUser] = useState({});
 
   useEffect(() => {
-    fetchSD(params.id).then((resolve) => setData(resolve));
+    // fetchSD(params.id).then((resolve) => setData(resolve));
+    getDAtaId(params.id).then((resolve) => {
+      setData(resolve.postOfId[0]);
+    });
   }, []);
+  useEffect(() => {
+    data?.userId
+      ? getDAtaId(params.id, data?.userId).then((resolve) => {
+          setElemUser(resolve?.usId[0]);
+        })
+      : "";
+  }, [data]);
+
+  console.log("**********************");
+  console.log(data);
+  console.log(elemUser);
+  console.log("**********************");
 
   return (
     <div className=" bg-white w-80vw m-auto p-2 text-black flex flex-col lg:flex-row    justify-around  gap-5   gap-x-4 border-2 border-black  ">
@@ -46,7 +63,7 @@ const IdBlogComp = ({ params }) => {
                 <h3 className="bg-black text-white"> Loading ........ </h3>
               }
             >
-              <ChildComponent userId={data.userId} />
+              <ChildComponent elem={elemUser} />
             </Suspense>
           )}
 
