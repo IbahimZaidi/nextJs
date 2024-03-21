@@ -30,7 +30,7 @@ const handler = async (req, res) => {
       const userId = req.body.userId;
       console.log("________________________");
       console.log(postId);
-      console.log("________________________");
+      console.log("_______________________");
 
       const poId = await query({
         query: `SELECT * FROM posts WHERE id = ?`,
