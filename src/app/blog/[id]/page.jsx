@@ -7,6 +7,8 @@ import { fetchSD } from "../page";
 import { useState, useEffect } from "react";
 import getDAtaId from "@/src/helper/functions/getDataId";
 import ChildComponent from "@/src/ComponentsLayout/dashbord/helpComponentDashbord/blog/ChildComponent";
+
+// const IdBlogComp component , the main component :
 const IdBlogComp = ({ params }) => {
   // const [data, setData] = useState({});
   const [data, setData] = useState({});
@@ -26,10 +28,10 @@ const IdBlogComp = ({ params }) => {
       : "";
   }, [data]);
 
-  console.log("**********************");
-  console.log(data);
-  console.log(elemUser);
-  console.log("**********************");
+  // console.log("**********************");
+  // console.log(data);
+  // console.log(elemUser);
+  // console.log("**********************");
 
   return (
     <div className=" bg-white w-80vw m-auto p-2 text-black flex flex-col lg:flex-row    justify-around  gap-5   gap-x-4 border-2 border-black  ">

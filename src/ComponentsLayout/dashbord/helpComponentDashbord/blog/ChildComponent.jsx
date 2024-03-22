@@ -6,7 +6,7 @@ const ChildComponent = async ({ elem }) => {
   return (
     <div className="flex flex-col space-y-3">
       <span> Author </span>
-      <span> {elem.zipcode} </span>
+      <span> {elem.username} </span>
     </div>
   );
 };

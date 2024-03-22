@@ -28,9 +28,6 @@ const handler = async (req, res) => {
     } else if (req.method === "POST") {
       const postId = req.body.postId;
       const userId = req.body.userId;
-      console.log("________________________");
-      console.log(postId);
-      console.log("_______________________");
 
       const poId = await query({
         query: `SELECT * FROM posts WHERE id = ?`,
