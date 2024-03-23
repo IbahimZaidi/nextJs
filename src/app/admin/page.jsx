@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import LeftCompContact from "@/src/ComponentsLayout/dashbord/helpComponentDashbord/contact/LeftCompContact";
+import { createPost } from "@/src/lib/insertData";
+import Styles from "@/src/app/contact/contact.module.css";
+import { deletePost } from "@/src/lib/deletePost";
 
 const AdminComp = () => {
   console.log("hello from the Parent");
@@ -16,7 +18,46 @@ const AdminComp = () => {
           height="450"
         />
       </div>
-      <LeftCompContact />
+
+      <div className=" flex flex-col  flex-1 justify-start pt-16 px-3  space-y-6 bg-red-400 border border-black ">
+        <form action={createPost} className="flex flex-col space-y-3">
+          <input
+            type="text"
+            placeholder="user Id  "
+            name="userId"
+            className={Styles.theInput}
+          />
+          <input
+            type="text"
+            placeholder="title"
+            name="title"
+            className={Styles.theInput}
+          />
+          <input
+            type="text"
+            placeholder="body"
+            name="body"
+            className={Styles.theInput}
+          />
+
+          <button className=" bg-slate-400 h-12 w-100% m-auto " type="submit">
+            {" "}
+            Send{" "}
+          </button>
+        </form>
+        <form action={deletePost} className="border-4 border-black mt-4">
+          <input
+            type="number"
+            placeholder="id"
+            name="id"
+            className={Styles.theInput}
+          />
+          <button className=" bg-slate-400 h-12 w-100% m-auto " type="submit">
+            {" "}
+            Delete{" "}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -11,15 +11,10 @@ const handler = async (req, res) => {
         values: [],
       }); // the posts it is the results returned by query({}) function
 
-      //
-      //
       const users = await query({
         query: "SELECT * FROM `users` WHERE 1",
         values: [],
       });
-      ///
-      ///
-      //
 
       res.status(200).json({ users: users, posts: posts }); // return in the response a json with value of posts;
 
