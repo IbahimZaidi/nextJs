@@ -1,5 +1,5 @@
 import { revalidatePath } from "next/cache";
-import { query } from "../pages/api/query";
+import { query } from "../../public/api/query";
 
 export const deletePost = async (formData) => {
   "use server";

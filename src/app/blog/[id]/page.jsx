@@ -2,36 +2,54 @@
 
 import React, { Suspense, lazy } from "react";
 import Image from "next/image";
-import { fetchSD } from "../page";
+import { resolve } from "styled-jsx/css";
+// import { fetchSD } from "../page";
 
 import { useState, useEffect } from "react";
-import getDAtaId from "@/src/helper/functions/getDataId";
+// import getDAtaId from "@/src/helper/functions/getDataId";
 import ChildComponent from "@/src/ComponentsLayout/dashbord/helpComponentDashbord/blog/ChildComponent";
 
+export const getThePost = async (id) => {
+  const url = `http://localhost:3000/api/blog/${id}`;
+
+  const response = await fetch(url);
+
+  const result = await response.json();
+
+  return result;
+};
+
+export const getTheUser = async (id, userId) => {
+  const url = `http://localhost:3000/api/blog/${id}?userId=${userId}`;
+
+  const response = await fetch(url);
+
+  const result = await response.json();
+
+  return result;
+};
 // const IdBlogComp component , the main component :
 const IdBlogComp = ({ params }) => {
-  // const [data, setData] = useState({});
   const [data, setData] = useState({});
   const [elemUser, setElemUser] = useState({});
 
+  // get the Post
   useEffect(() => {
-    // fetchSD(params.id).then((resolve) => setData(resolve));
-    getDAtaId(params.id).then((resolve) => {
-      setData(resolve.postOfId[0]);
-    });
+    getThePost(params.id).then((resolve) => setData(resolve[0]));
   }, []);
+
+  // get the User
   useEffect(() => {
     data?.userId
-      ? getDAtaId(params.id, data?.userId).then((resolve) => {
-          setElemUser(resolve?.usId[0]);
-        })
+      ? getTheUser(params.id, data.userId).then((resolve) =>
+          setElemUser(resolve[0])
+        )
       : "";
   }, [data]);
 
-  // console.log("**********************");
-  // console.log(data);
-  // console.log(elemUser);
-  // console.log("**********************");
+  console.log("**********************");
+  console.log(elemUser);
+  console.log("**********************");
 
   return (
     <div className=" bg-white w-80vw m-auto p-2 text-black flex flex-col lg:flex-row    justify-around  gap-5   gap-x-4 border-2 border-black  ">
