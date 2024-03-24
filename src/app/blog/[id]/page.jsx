@@ -8,6 +8,7 @@ import { resolve } from "styled-jsx/css";
 import { useState, useEffect } from "react";
 // import getDAtaId from "@/src/helper/functions/getDataId";
 import ChildComponent from "@/src/ComponentsLayout/dashbord/helpComponentDashbord/blog/ChildComponent";
+import { DELETE } from "../../api/blog/[id]/route";
 
 export const getThePost = async (id) => {
   const url = `http://localhost:3000/api/blog/${id}`;
@@ -28,8 +29,25 @@ export const getTheUser = async (id, userId) => {
 
   return result;
 };
+
+const deletePost = async (id) => {
+  const response = await fetch(`http://localhost:3000/api/blog/${id}`, {
+    method: "DELETE",
+  });
+};
+
+const createNewPost = async (id, theSearch) => {
+  const { userId, title, body } = theSearch;
+  console.log(userId, title, body);
+  const response = await fetch(
+    `http://localhost:3000/api/blog/${id}?userId=${userId}&title=${title}&body=${body}`,
+    {
+      method: "POST",
+    }
+  );
+};
 // const IdBlogComp component , the main component :
-const IdBlogComp = ({ params }) => {
+const IdBlogComp = ({ params, searchParams }) => {
   const [data, setData] = useState({});
   const [elemUser, setElemUser] = useState({});
 
@@ -93,6 +111,27 @@ const IdBlogComp = ({ params }) => {
           </div>
         </div>
         <h2> {data && data.body} </h2>
+        <button
+          onClick={() => {
+            deletePost(83);
+            console.log("delete this button ");
+          }}
+          className=" bg-red-500 p-5 w-1/3 m-auto"
+        >
+          {" "}
+          Delete the element 86{" "}
+        </button>
+
+        <button
+          onClick={() => {
+            createNewPost(params.id, searchParams);
+            console.log("create this button ");
+          }}
+          className=" bg-green-500 p-5 w-1/3 m-auto"
+        >
+          {" "}
+          Create New Post
+        </button>
       </div>
     </div>
   );
