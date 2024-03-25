@@ -18,7 +18,7 @@ const arrayLink = [
 ];
 const Links = ({ session }) => {
   const thePath = usePathname();
-  const isAdmin = false;
+  const isAdmin = true;
   // declare toggle state :
 
   const [valueToggle, setToggleButt] = useState(false);
@@ -86,13 +86,15 @@ const Links = ({ session }) => {
           <div>
             <form action={handleLogOut}>
               <button className="theButtonClass" type="submit">
-                Logout
+                logOut
               </button>
             </form>
           </div>
         ) : (
           <div>
-            <button className="theButtonClass">Login</button>
+            <button className="theButtonClass">
+              <Link href="/login"> Login </Link>
+            </button>
           </div>
         )}
       </div>

@@ -2,14 +2,9 @@ import React from "react";
 
 import Styles from "@/src/app/contact/contact.module.css";
 
-import { auth, signIn } from "@/src/lib/auth";
+import { signIn } from "@/src/lib/auth";
 
 const LoginComp = async () => {
-  const session = await auth();
-
-  console.log("###########");
-  console.log(session);
-  console.log("###########");
   const handleGitHubLogin = async () => {
     "use server";
     await signIn("github");
@@ -34,23 +29,8 @@ const LoginComp = async () => {
           className={Styles.theInput}
         />
 
-        <button className=" bg-slate-400 h-12 w-100% m-auto " type="submit">
-          {" "}
-          Send{" "}
-        </button>
+        <button className=" bg-slate-400 h-12 w-100% m-auto "> Send </button>
       </form>
-      {/* <form className="border-4 border-black mt-4">
-        <input
-          type="number"
-          placeholder="id"
-          name="id"
-          className={Styles.theInput}
-        />
-        <button className=" bg-slate-400 h-12 w-100% m-auto " type="submit">
-          {" "}
-          Delete{" "}
-        </button>
-      </form> */}
     </div>
   );
 };
