@@ -15,8 +15,8 @@ const arrayLink = [
 ];
 const Links = () => {
   const thePath = usePathname();
-  const isLogin = true;
-  const isAdmin = true;
+  const isLogin = false;
+  const isAdmin = false;
   // declare toggle state :
 
   const [valueToggle, setToggleButt] = useState(false);
