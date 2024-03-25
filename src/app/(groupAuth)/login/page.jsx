@@ -2,14 +2,14 @@ import React from "react";
 
 import Styles from "@/src/app/contact/contact.module.css";
 
-import { signIn } from "@/src/lib/auth";
+import { auth, signIn } from "@/src/lib/auth";
 
 const LoginComp = async () => {
-  // const session = await auth();
+  const session = await auth();
 
-  // console.log("###########");
-  // console.log(session);
-  // console.log("###########");
+  console.log("###########");
+  console.log(session);
+  console.log("###########");
   const handleGitHubLogin = async () => {
     "use server";
     await signIn("github");
