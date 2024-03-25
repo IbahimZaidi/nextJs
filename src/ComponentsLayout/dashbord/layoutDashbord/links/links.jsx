@@ -83,17 +83,17 @@ const Links = ({ session }) => {
         })}
 
         {session?.user ? (
-          <Link href="/logout">
+          <div>
             <form action={handleLogOut}>
               <button className="theButtonClass" type="submit">
                 Logout
               </button>
             </form>
-          </Link>
+          </div>
         ) : (
-          <Link href="/login">
+          <div>
             <button className="theButtonClass">Login</button>
-          </Link>
+          </div>
         )}
       </div>
       <button
