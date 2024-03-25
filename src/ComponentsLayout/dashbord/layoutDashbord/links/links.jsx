@@ -6,6 +6,9 @@ import { usePathname } from "next/navigation";
 import { IoMdMenu } from "react-icons/io";
 // get the footer css :
 import styles from "./../footer.module.css";
+import { handleLogOut } from "@/src/lib/actionAuth/handleLogOut";
+
+// import { handleLogOut } from "@/src/lib/actionAuth/handleLogOut";
 const arrayLink = [
   { title: "Home", link: "/" },
   { title: "Blog", link: "/blog" },
@@ -13,9 +16,8 @@ const arrayLink = [
   { title: "Contact", link: "/contact" },
   { title: "About", link: "/about" },
 ];
-const Links = () => {
+const Links = ({ session }) => {
   const thePath = usePathname();
-  const isLogin = false;
   const isAdmin = false;
   // declare toggle state :
 
@@ -60,7 +62,7 @@ const Links = () => {
               </Link>
             );
           }
-          if (elem.title == "Admin" && isAdmin && isLogin) {
+          if (elem.title == "Admin" && isAdmin && session) {
             return (
               <Link
                 href={elem.link}
@@ -80,9 +82,13 @@ const Links = () => {
           }
         })}
 
-        {isLogin ? (
+        {session?.user ? (
           <Link href="/logout">
-            <button className="theButtonClass">Logout</button>
+            <form action={handleLogOut}>
+              <button className="theButtonClass" type="submit">
+                Logout
+              </button>
+            </form>
           </Link>
         ) : (
           <Link href="/login">
