@@ -1,5 +1,8 @@
 import mysql from "mysql2/promise";
 
+// link to json data :
+// https://jsonplaceholder.typicode.com/
+
 export const query = async ({ query, values }) => {
   const dbConn = await mysql.createConnection({
     host: "localhost",
